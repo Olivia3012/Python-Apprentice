@@ -17,7 +17,42 @@ tina = turtle.Turtle()                  # Create a turtle named tina
 # Make each side of the pentagon a different color with 
 # tina.pencolor()
 
+tina.pencolor('orange')
+tina.pendown()
 
-... # Your code here
+tina.forward(100)
+tina.left(40)
+
+
+tina.pencolor('red')
+tina.forward(100)
+tina.left(40)
+
+tina.pencolor('blue')
+tina.forward(100)
+tina.left(40)
+
+tina.pencolor('green')
+tina.forward(100)
+tina.left(40)
+
+tina.pencolor('purple')
+tina.forward(100)
+tina.left(40)
+
+tina.pencolor('yellow')
+tina.forward(100)
+tina.left(40)
+
+tina.pencolor('pink')
+tina.forward(100)
+tina.left(40)
+
+tina.forward(100)
+tina.left(40)
+
+tina.forward(100)
+tina.left(40)
+
 
 turtle.exitonclick()                    # Close the window when we click on it

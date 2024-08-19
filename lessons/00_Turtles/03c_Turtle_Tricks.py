@@ -18,7 +18,21 @@ tina = turtle.Turtle()                  # Create a turtle named tina
 # Use tina.circle() to draw a circle, and tina.goto() to move tina to a new location
 # Use tina.begin_fill(), tina.end_fill(), and tina.fillcolor() to fill in the shapes
 
+tina.pendown()
+tina.pencolor('blue')
+tina.begin_fill()
+tina.circle(100, steps=100)
+tina.fillcolor('blue')
+tina.end_fill()
 
-... # Your code here
+tina.penup()
+tina.goto(-150,60)
+
+tina.pendown()
+tina.pencolor('green')
+tina.begin_fill()
+tina.circle(100, steps=100)
+tina.fillcolor('green')
+tina.end_fill()
 
 turtle.exitonclick()                    # Close the window when we click on it
