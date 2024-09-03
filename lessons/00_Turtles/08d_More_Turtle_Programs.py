@@ -31,10 +31,10 @@ def set_turtle_image(turtle, image_name):
     turtle.shape(image_path)
 
 
-pikachu = set_turtle_image(t, "pikachu.gif")
+#pikachu = set_turtle_image(t, "pikachu.gif")
 
 
-t.shape(pikachu)
+#t.shape(pikachu)
 t.turtlesize(stretch_wid=10, stretch_len=10, outline=4) # Make the turtle really big
 
 def turtle_clicked(t, x, y):
@@ -51,15 +51,19 @@ def turtle_clicked(t, x, y):
 
     print('turtle clicked!')
     
+    import random
+    x = random.randint(-300, 300)
+    y = random.randint(-300, 300)
+
+    t.goto(x, y)
+
+
     for i in range(0,360, 20): # Full circle, 20 degrees at a time
         t.tilt(20) # Tilt the turtle 20 degrees
 
 # Connect the turtle to the turtle_clicked function
 t.onclick(lambda x, y, t=t: turtle_clicked(t, x, y))
 
-import random
-x = random.randint(-300, 300)
-y = random.randint(-300, 300)
 
 
 turtle.done() 
