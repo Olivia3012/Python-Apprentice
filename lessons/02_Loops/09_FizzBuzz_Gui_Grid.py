@@ -33,27 +33,33 @@ app = App("Numbers Grid", layout="grid")
 
 # Create a 10x10 grid using nested loops
 # Or you can use a single loop and calculate the row and column
-i=0
-for col in range(10):
-    for row in range(10):
-        Text(app, text=str(i), grid=[col,row], color= "black")
-        if i%5 == 0:
-            Text(app, text='🦡', grid=[col,row])
-        elif i%3 == 0:
-            Text(app, text='🍄', grid=[col,row])
-        elif i%15 == 0:
-            Text(app, text='🐍', grid=[col,row])
-        print(i)
+sum = 0
+for x in range(10):
+    for y in range(10):
+        Text(app, text=str(sum), grid=[y,x])
+        if sum% 15 == 0:
+            Text(app, text='🐍', grid=[y,x])
+            pass
+        elif sum% 3 == 0:
+            Text(app, text='🍄', grid=[y,x])
+            pass
+        elif sum% 5 == 0:
+            Text(app, text='🦡', grid=[y,x])
+            pass
+    
         else:
-            
-            for num in str(i):
-                
-                
-                
-            
-                
-        i+=1
-            
+            if(x+y)%2 == 0:
+                Text(app, text=str(sum), grid=[y,x], color= "blue")
+            else:
+                Text(app, text=str(sum), grid=[y,x], color= "red")
+        sum+=1
+
+
+    #  
+
+        
+        
+        
         
     
 
