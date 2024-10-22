@@ -42,12 +42,36 @@ def ask_integer(prompt):
 
 
 # Pick the random number
+x = random.randint(1, 100 )
+#if x%7 == (1,6):
+    
+
+
 
 # In your loop:
 
     # Get the user's guess
 
+guess = ask_integer("Guess a number between 1 and 100: ")
+
     # If the user's guess is divisible by 7, tell the user to start over
+correct = x
+guessed = False
+while not guessed:
+    if guess%7 == 0:
+        guess=ask_integer("that is a very bad number, starting over ")
+    elif guess>x:
+        guess=ask_integer("That number is too large! ")
+    elif guess<x:
+        guess=ask_integer("That number is too small!")
+    else:
+        ask_integer("You found the number!")
+        guessed = True
+        
+    
+
+
+
 
     # If the user's guess is too high, tell the user
     # If the user's guess is too low, tell the user
