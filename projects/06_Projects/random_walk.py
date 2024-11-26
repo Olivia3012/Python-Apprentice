@@ -22,8 +22,27 @@ walker.speed(0)  # Set to the maximum speed
 walker.goto(0, 0)  # Start in the middle of the grid
 walker.pendown()
 
+def N():
+    walker.forward(10)
+def E():
+    walker.left(90) 
+    walker.forward(10)
+def S():
+    walker.right(90)
+    walker.forward(10)
+def W():
+    walker.left(180)
+    walker.forward(10)
+
+
 # Function to move the turtle randomly in the grid
 def random_walk(walker, steps):
+    for _ in range(steps):
+        move=random.choice((N, E, S, W))
+        move()
+
+    
+
     """ Implement a random walk for the turtle
 
     The turtle will move on a grid, taking a random step in one of the four directions

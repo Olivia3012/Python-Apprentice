@@ -7,7 +7,7 @@ window = Tk()  # ;
 # Hide the window using the window's .withdraw() method
 window.withdraw()  # ;
 
-# 1. Make a variable equal to a positive number less than 4 using random.randInt(0, 3)
+# 1. Make a variable equal to a positive number less than 4 using random.ranInt(0, 3)
 randNum = random.randint(0, 3)  # ;
 
 # 2. Print your variable to the console
@@ -18,7 +18,6 @@ response = simpledialog.askstring(  # ;
     None, prompt="What is something you think is awesome?"  # ;
 )  # ;
 
-# 4. If your variable is  0
 if randNum == 0:  # ;
     # -- tell the user whatever they entered is awesome!
     message = "That is awesome!"  # ;

@@ -8,6 +8,9 @@ O_MARK = "O"
 # IMPORTANT! In your code, you should use the constants X_MARK and O_MARK instead of the strings "x" and "o"
 
 def check_row(l):
+    if l[0] == l[1] and l[1] == l[2]:
+        return l[0]
+
     """Check if a player won on a row
     Args:
         l: a 3 element iterable
@@ -19,6 +22,32 @@ def check_row(l):
     return None
 
 def check_win(board):
+    for row in board:
+        check_row(row)
+        winner=check_row(row)
+        if winner:
+            return winner
+    columns=zip(*board)
+    for row in columns:
+        check_row(row)
+        winner=check_row(row)
+        if winner:
+            return winner
+    d1 = [ board[i][i] for i in range(3) ]
+    check_row(row)
+    winner=check_row(d1)
+    if winner:
+        return winner
+#assert is checking if your code will raise an error
+    d2 = [ board[i][2-i] for i in range(3) ]
+    check_row(row)
+    winner=check_row(d2)
+    if winner:
+        return winner
+    
+    
+
+    
     """Check if a player has won on a board
     Args:
         board: a 3x3 2D array
@@ -105,3 +134,4 @@ class TicTacToe:
 
 ttt = TicTacToe(check_win)
 ttt.start()
+
