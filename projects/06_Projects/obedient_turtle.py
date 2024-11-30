@@ -11,7 +11,6 @@ from tkinter import messagebox, simpledialog, Tk
 #   1. Create a turtle.
 import turtle                           
 turtle.setup(width=600, height=600)    
-
 tina = turtle.Turtle()                  
 
 tina.shape('turtle')                   

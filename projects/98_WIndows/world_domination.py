@@ -2,7 +2,6 @@ from tkinter import messagebox, simpledialog, Tk
 
 # Create a new window variable, window = Tk()
 window = Tk()  # ;
-
 # Hide the window using the window's .withdraw() method
 window.withdraw()  # ;
 
@@ -15,6 +14,5 @@ if response == "yes":  # ;
 else:  # ;
     # 3. Otherwise, tell them to sign up for classes at The League in an error box pop-up.
     messagebox.showerror(message="You need to sign up for classes at The League!")  # ;
-
 # Run the window's .mainloop() method
 window.mainloop()  # ;

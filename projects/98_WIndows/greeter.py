@@ -1,5 +1,4 @@
 from tkinter import messagebox, simpledialog, Tk
-
 # Create a new window variable, window = Tk()
 window = Tk()  # ;
 

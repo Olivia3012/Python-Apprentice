@@ -67,12 +67,12 @@ def delete_definition(db, key):
 
     pass
 
-a= "fun"
+a= "burp"
 b= "funny"
 c= "hilarious"
-d= "amusing"
-e= "pants"
-f= "spleen"
+d= "underpants"
+e= "fart"
+f= "butt-hole"
 
 
 def is_funny(definition):
