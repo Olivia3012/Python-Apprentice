@@ -23,8 +23,13 @@ import random
 
 guest = {}
 hotel_levels = (1, 2, 3,4,5,6)
-room_numbers1 = [1,6]
-room_numbers1 = [1,6] #start here
+room_numbers1 = range(1,6)
+room_numbers2 = range(6,11 )
+room_numbers3 = range(11,16)
+room_numbers4 = range(16,21)
+room_numbers5 = range(21,26)
+room_numbers6 = range(26,31)
+
 def hotel_checkinandcheckout():
     booking = simpledialog.askstring("Checking", "Are you booking rooms? (if not, enter 'no')")
     guest_name = simpledialog.askstring("Check-in", "What is your name?")
@@ -38,26 +43,30 @@ def hotel_checkinandcheckout():
         if in_or_out == "in":
             prefered_level = simpledialog.askinteger("Levels", "What level of the hotel would you prefer? (1,6) ")
             if prefered_level == 1:
-                room_numbers = range[1,6]
+                room_numbers = room_numbers1
             elif prefered_level == 2:
-                room_numbers = range[6,11]
+                room_numbers = room_numbers2
             elif prefered_level == 3:
-                room_numbers = range[11,16]
+                room_numbers = room_numbers3
             elif prefered_level == 4:
-                room_numbers = range[16,21]
+                room_numbers = room_numbers4
             elif prefered_level == 5:
-                room_numbers = range[21,26]
+                room_numbers = room_numbers5
             elif prefered_level == 6:
-                room_numbers = range[26,31]
-            choosing_rooms = random.choice(room_numbers)
+                room_numbers = room_numbers6
             number_room = simpledialog.askinteger("rooms", "How many rooms did you book?")
-            for _ in range (number_room):
-                choosing_rooms
-                if choosing_rooms == guest:
-                    choosing_rooms = random.choice(room_numbers)
-                    
-            else:
-                messagebox.showinfo("Your room is", choosing_rooms)
+            in_levels = 0
+            for i in range(number_room):
+                choosing_rooms = room_numbers[in_levels]
+                messagebox.showinfo("Your Room", choosing_rooms)
+                in_levels+=1
+                if number_room > 6:
+                    messagebox.showinfo("Oops", "something went wrong")
+                    break
+                elif choosing_rooms > room_numbers[-1]:
+                    messagebox.showinfo("Oops", "Error")
+                    break
+                     
         guest[guest_name]= choosing_rooms
     elif in_or_out == "out":
         number_room = simpledialog.askinteger("Rooms", "How many rooms did you book?")
@@ -67,10 +76,11 @@ def hotel_checkinandcheckout():
         del guest[guest_name]
 
     dictionary = {
-        guest_name: choosing_rooms 
+        guest_name: choosing_rooms
 
     }
-    
+    print(dictionary)
+   
 
 hotel_checkinandcheckout()
 
