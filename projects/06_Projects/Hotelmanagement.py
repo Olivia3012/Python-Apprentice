@@ -86,17 +86,34 @@ while True:
                     elif choosing_rooms > room_numbers[-1]:
                         messagebox.showinfo("Oops", "Error")
                         break
+
                         
                     
             
             if in_or_out == "out":
+                guest_name = simpledialog.askstring("Check-out", "What was your name?")
                 number_room = simpledialog.askinteger("Rooms", "How many rooms did you book?")
                 number_night = simpledialog.askinteger("Nights", "How many nights have you stayed with us?")
-                final_cost = number_room*number_night*450
+                bonuses = simpledialog.askstring("Deals", "Do you have chase saphire? If yes type yes, if no, type no")
+                if bonuses == 'yes':
+                    saphire = 50
+                    messagebox.showinfo("Yay", "You just saved $50!")
+                else:
+                    messagebox.showinfo("Sorry. whthout the chase saphire card you don't get any special deals.")
+                    saphire = 0
+                final_cost = number_room*number_night*450 - saphire
+                messagebox.showinfo("Yay", "Thank you for staying with us.")
                 messagebox.showinfo("Final Cost", final_cost)
                 del guest[guest_name]
                 for key, value in dictionary(guest_name):
                     room_numbers.add(value)
+
+
+            else:
+                messagebox.showinfo("Oops", "something went wrong")
+
+        else:
+            messagebox.showinfo("Oops", "something went wrong")
 
         
         
